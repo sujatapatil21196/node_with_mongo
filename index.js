@@ -5,7 +5,7 @@ let bodyParser=require('body-parser');
 let bcrypt=require('bcryptjs');
 let jwt=require('jsonwebtoken');
 let app = express();
-let port = 9500;
+let PORT =process.env.PORT || 9500;
 let cors = require('cors');
 let mongo = require('mongodb');
 const { config } = require('dotenv');
@@ -425,8 +425,8 @@ app.post('/login', (req, res) => {
 MongoClient.connect(MongoUrl, { useNewUrlParser: true }, (err, dc) => {
     if (err) console.log("Error while connecting");
     db = dc.db('devomato');
-    app.listen(port, () => {
-        console.log(`server is running on port ${port}`);
+    app.listen(PORT, () => {
+        console.log(`server is running on port ${PORT}`);
     })
 })
 
