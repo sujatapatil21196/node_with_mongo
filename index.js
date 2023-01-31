@@ -12,6 +12,7 @@ const { config } = require('dotenv');
 let MongoClient = mongo.MongoClient;
 let MongoUrl =  "mongodb+srv://Sujatapatil:Sujata21196@cluster0.dqyo1.mongodb.net/?retryWrites=true&w=majority";
 let db;
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.get('/', (req, res) => {
